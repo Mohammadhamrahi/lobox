@@ -1,0 +1,74 @@
+// Variables
+$primary-color: #007bff;
+$secondary-color: #6c757d;
+$background-color: #fff;
+$border-color: #b3b3b3;
+$border-color-active: #9eaad8;
+$hover-color: #f1f4ff;
+
+// Base Styles
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 300px; // Adjust as needed
+
+  input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    background-color: $background-color;
+    cursor: pointer;
+    outline: none;
+    color: black;
+    &:focus {
+      box-shadow: 0 0 5px rgba($primary-color, 0.5);
+      border: 1px solid $border-color-active;
+    }
+    &::placeholder {
+      color: rgb(122, 122, 122) !important;
+    }
+  }
+
+  ul {
+    position: absolute;
+    top: calc(100% + 5px); // Position below the input
+    left: 0;
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: $background-color;
+    border: 1px solid $border-color;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+
+    li {
+      padding: 10px;
+      font-size: 16px;
+      color: $secondary-color;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $hover-color;
+      }
+
+      &.selected {
+        background-color: $hover-color;
+        font-weight: bold;
+      }
+    }
+  }
+}
+.select-box {
+  display: flex;
+  align-items: center;
+  & span {
+    position: absolute;
+    right: 10px;
+    img {
+      width: 12px;
+    }
+  }
+}
